@@ -1,1 +1,1 @@
-web: uvicorn immerso.asgi:application --port $PORT --host 0.0.0.0 --limit-max-requests 1000
+web: python3 manage.py runserver 0.0.0.0:$PORT
