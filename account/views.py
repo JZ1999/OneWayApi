@@ -6,6 +6,7 @@ from account.serializers import TemporaryAccountSerializer
 class TemporaryAccountView(viewsets.ModelViewSet):
     queryset = Account.objects.filter(temporary=True)
     serializer_class = TemporaryAccountSerializer
+    lookup_field = "uuid"
 
     def get_permissions(self):
         return [perm() for perm in self.permission_classes] if not self.request.method == "POST" else ()

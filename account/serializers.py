@@ -15,8 +15,8 @@ class TemporaryAccountSerializer(serializers.ModelSerializer):
         fields = ("name", "uuid", "device")
 
     def create(self, validated_data):
-        uuid, name, device = str(validated_data.get("uuid")), validated_data.get("user").get("first_name")\
-            ,validated_data.get("device")
+        uuid, name, device = str(validated_data.get("uuid")), validated_data.get("user").get("first_name") \
+            , validated_data.get("device")
         user = User.objects.filter(username=uuid).first()
         if not user:
             user = User.objects.create_user(username=uuid,
