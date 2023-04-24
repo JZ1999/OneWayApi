@@ -19,3 +19,4 @@ virtualenv==20.8.1
 virtualenv-clone==0.5.7
 virtualenvwrapper==4.8.4
 zipp==3.5.0
+django_heroku==0.3.1
